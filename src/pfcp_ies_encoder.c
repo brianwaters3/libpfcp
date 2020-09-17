@@ -2872,8 +2872,8 @@ int encode_pfcp_3gpp_intfc_type_ie_t(const pfcp_3gpp_intfc_type_ie_t *value,
 {
     uint16_t encoded = 0;
     encoded += encode_pfcp_ie_header_t(&value->header, buf + (encoded/CHAR_SIZE));
-    encoded += encode_bits(value->interface_type_value, 6, buf + (encoded/8), encoded % CHAR_SIZE);
     encoded += encode_bits(value->spare, 2, buf + (encoded/8), encoded % CHAR_SIZE);
+    encoded += encode_bits(value->interface_type_value, 6, buf + (encoded/8), encoded % CHAR_SIZE);
 
     return encoded/CHAR_SIZE;
 }
